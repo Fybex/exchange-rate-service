@@ -14,7 +14,7 @@ func main() {
 	models.InitDB()
 
 	router := mux.NewRouter()
-	router.HandleFunc("/api/rate", handlers.GetExchangeRate).Methods("GET")
+	router.HandleFunc("/api/rate", handlers.Rate).Methods("GET")
 	router.HandleFunc("/api/subscribe", handlers.Subscribe).Methods("POST")
 
 	email_sender.ScheduleEmails()

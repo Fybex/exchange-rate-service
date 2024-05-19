@@ -23,15 +23,15 @@ func ScheduleEmails() {
 	c.Start()
 }
 
-func SendRateEmails() {
+func SendRateEmails() error {
 	subscribers, err := models.GetSubscribers()
 	if err != nil {
-		log.Fatal(err)
+		return fmt.Errorf("failed to get subscribers: %w", err)
 	}
 
 	exchangeRate, err := exchange.FetchRate()
 	if err != nil {
-		log.Fatal(err)
+		return fmt.Errorf("failed to fetch exchange rate: %w", err)
 	}
 
 	for _, subscriber := range subscribers {
@@ -41,9 +41,10 @@ func SendRateEmails() {
 			log.Printf("Sent email to: %s", subscriber.Email)
 		}
 	}
+	return nil
 }
 
-func sendEmail(recipient string, rate float64) error {
+var sendEmail = func(recipient string, rate float64) error {
 	m := gomail.NewMessage()
 	m.SetHeader("From", os.Getenv("SMTP_USER"))
 	m.SetHeader("To", recipient)

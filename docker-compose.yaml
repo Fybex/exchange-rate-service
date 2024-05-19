@@ -1,7 +1,6 @@
-version: '3.8'
-
 services:
   web:
+    container_name: web
     build: .
     ports:
       - '8000:8000'
@@ -15,6 +14,7 @@ services:
       - db
 
   db:
+    container_name: db
     image: postgres
     env_file:
       - .env

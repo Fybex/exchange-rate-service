@@ -11,7 +11,7 @@ type ErrorResponse struct {
 	Error string `json:"error"`
 }
 
-func GetExchangeRate(w http.ResponseWriter, r *http.Request) {
+func Rate(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	rate, err := exchange.FetchRate()
 	if err != nil {

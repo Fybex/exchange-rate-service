@@ -1,6 +1,8 @@
 # Exchange Rate Service
 
-Service that provides exchange rate information and subscription functionality.
+**This project was developed as the second stage of selection for Genesis & KMA SOFTWARE ENGINEERING SCHOOL 4.0**
+
+Service that provides USD to UAN exchange rate and notifies users daily about the rate changes.
 
 ## Installing
 
@@ -33,3 +35,9 @@ The service will be available at `http://localhost:8000`
 ## API Endpoints
 
 `pkg/api/swagger.yaml` contains the API documentation.
+
+## Running unit tests
+
+```sh
+docker-compose exec -it web go test ./... -v
+```

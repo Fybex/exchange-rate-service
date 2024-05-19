@@ -10,8 +10,12 @@ import (
 )
 
 const (
-	API_URL = "https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=11"
-	USD     = "USD"
+	USD = "USD"
+)
+
+var (
+	API_URL            = "https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=11"
+	ErrUSDRateNotFound = errors.New("USD rate not found")
 )
 
 type Rate struct {
@@ -21,11 +25,7 @@ type Rate struct {
 	Sale    string `json:"sale"`
 }
 
-var (
-	ErrUSDRateNotFound = errors.New("USD rate not found")
-)
-
-func FetchRate() (float64, error) {
+var FetchRate = func() (float64, error) {
 	resp, err := http.Get(API_URL)
 	if err != nil {
 		return 0, fmt.Errorf("failed to make GET request: %w", err)

@@ -17,7 +17,7 @@ var (
 	ErrUniqueViolation  = "23505" // PostgreSQL unique violation error code
 )
 
-func AddSubscriber(subscriber Subscriber) error {
+var AddSubscriber = func(subscriber Subscriber) error {
 	stmt, err := db.Prepare("INSERT INTO subscribers(email) VALUES($1)")
 	if err != nil {
 		return fmt.Errorf("could not prepare statement: %w", err)
@@ -36,7 +36,7 @@ func AddSubscriber(subscriber Subscriber) error {
 	return nil
 }
 
-func GetSubscribers() ([]Subscriber, error) {
+var GetSubscribers = func() ([]Subscriber, error) {
 	rows, err := db.Query("SELECT id, email FROM subscribers")
 	if err != nil {
 		return nil, fmt.Errorf("could not execute query: %w", err)
