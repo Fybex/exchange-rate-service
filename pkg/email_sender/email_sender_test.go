@@ -2,9 +2,10 @@ package email_sender
 
 import (
 	"errors"
-	"exchange-rate-service/pkg/exchange"
-	"exchange-rate-service/pkg/models"
 	"testing"
+
+	"github.com/Fybex/exchange-rate-service/pkg/exchange"
+	"github.com/Fybex/exchange-rate-service/pkg/models"
 )
 
 var (

@@ -2,11 +2,12 @@ package handlers
 
 import (
 	"errors"
-	"exchange-rate-service/pkg/models"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
+
+	"github.com/Fybex/exchange-rate-service/pkg/models"
 )
 
 var (

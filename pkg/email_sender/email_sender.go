@@ -1,12 +1,13 @@
 package email_sender
 
 import (
-	"exchange-rate-service/pkg/exchange"
-	"exchange-rate-service/pkg/models"
 	"fmt"
 	"log"
 	"os"
 	"strconv"
+
+	"github.com/Fybex/exchange-rate-service/pkg/exchange"
+	"github.com/Fybex/exchange-rate-service/pkg/models"
 
 	"github.com/robfig/cron/v3"
 	"gopkg.in/gomail.v2"

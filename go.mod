@@ -1,4 +1,4 @@
-module exchange-rate-service
+module github.com/Fybex/exchange-rate-service
 
 go 1.22.3
 

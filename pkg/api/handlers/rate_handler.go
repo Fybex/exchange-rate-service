@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
-	"exchange-rate-service/pkg/exchange"
+	"github.com/Fybex/exchange-rate-service/pkg/exchange"
 	"log"
 	"net/http"
 )

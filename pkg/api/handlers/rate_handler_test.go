@@ -2,10 +2,11 @@ package handlers
 
 import (
 	"encoding/json"
-	"exchange-rate-service/pkg/exchange"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/Fybex/exchange-rate-service/pkg/exchange"
 )
 
 func mockFetchRateSuccess() (float64, error) {

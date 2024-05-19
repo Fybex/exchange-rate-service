@@ -1,14 +1,19 @@
 package main
 
 import (
-	"exchange-rate-service/pkg/api/handlers"
-	"exchange-rate-service/pkg/email_sender"
-	"exchange-rate-service/pkg/models"
+	"github.com/Fybex/exchange-rate-service/pkg/api/handlers"
+	"github.com/Fybex/exchange-rate-service/pkg/email_sender"
+	"github.com/Fybex/exchange-rate-service/pkg/models"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 )
+
+func init() {
+	log.SetOutput(os.Stdout)
+}
 
 func main() {
 	models.InitDB()
