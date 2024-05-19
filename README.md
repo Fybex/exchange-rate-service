@@ -2,7 +2,7 @@
 
 **This project was developed as the second stage of selection for Genesis & KMA SOFTWARE ENGINEERING SCHOOL 4.0**
 
-Service that provides USD to UAN exchange rate and notifies users daily about the rate changes.
+Service that provides USD to UAH exchange rate and notifies users daily about the rate changes.
 
 ## Installing
 
@@ -30,11 +30,11 @@ cp .env.example .env
 docker-compose up -d
 ```
 
-The service will be available at `http://localhost:8000`
+The service will be available at [`http://localhost:8000`](http://localhost:8000)
 
 ## API Endpoints
 
-`pkg/api/swagger.yaml` contains the API documentation.
+[`pkg/api/swagger.yaml`](pkg/api/swagger.yaml) contains the API documentation.
 
 ## Running unit tests
 
